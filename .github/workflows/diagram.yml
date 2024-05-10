@@ -1,0 +1,29 @@
+name: Create diagram
+on:
+  schedule:
+    # Runing biweekly, At 11:50 on day-of-month 1 and 16.
+    - cron: "50 11 4,19 * *"
+# one more commit and i'm going to shower
+#  we are using cron to not polute commits history
+# push:
+#   branches:
+#     - main
+jobs:
+  get_data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@master
+      - name: Generate diagram
+        uses: githubocto/repo-visualizer@main
+        with:
+          excluded_paths: ".github,.vscode,assets,locales,static"
+          excluded_globs: "**/*.{editorconfig,gitignore,lock,json,md,png,toml,svg,yml}"
+          output_file: ".github/diagram.svg"
+          should_push: false
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          branch: action
+          title: "[skip ci] updated code diagram"
+          commit-message: "[skip ci] updated code diagram"

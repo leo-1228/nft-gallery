@@ -1,0 +1,11 @@
+version = 1
+
+[[analyzers]]
+name = "javascript"
+enabled = true
+
+  [analyzers.meta]
+  plugins = ["vue"]
+  dialect = "typescript"
+  module_system = "es-modules"
+  skip_doc_coverage = ["method-definition"]
