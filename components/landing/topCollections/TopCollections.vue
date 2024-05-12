@@ -15,7 +15,7 @@
           :label="`${$t(`topCollections.timeFrames.${label}`)}`"
           @click="setTimeRange(value)" />
       </div>
-      <div class="!pt-4 md:!pt-2">
+      <div class="pt-4 md:!pt-2">
         <ChainDropdown
           position="bottom-auto"
           :show-network-label="false"
@@ -30,7 +30,7 @@
       :loading="loading"
       :skeleton-count="limit" />
 
-    <div class="!mt-8 flex justify-center">
+    <div class="mt-8 flex justify-center">
       <NeoButton
         :tag="NuxtLink"
         :to="`/${urlPrefix}/explore/collectibles?sort=volume_DESC`"

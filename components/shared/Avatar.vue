@@ -10,7 +10,6 @@
 
 <script lang="ts" setup>
 import Identicon from '@polkadot/vue-identicon'
-
 withDefaults(
   defineProps<{
     value: string
@@ -21,4 +20,5 @@ withDefaults(
     size: 64,
   },
 )
+
 </script>

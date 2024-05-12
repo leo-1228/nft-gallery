@@ -20,7 +20,7 @@
             alt="First NFT market explorer on Kusama and Polkadot" />
         </nuxt-link>
         <div
-          class="lg:!hidden flex flex-grow items-center justify-end"
+          class="lg:hidden flex flex-grow items-center justify-end"
           @click="closeBurgerMenu">
           <NeoButton
             v-show="isMobile && !openMobileSearchBar"
@@ -69,7 +69,7 @@
           <div class="navbar-item is-expanded flex justify-center">
             <Search
               v-if="!isTouch"
-              class="search-navbar flex-grow pb-0 max-lg:!hidden"
+              class="search-navbar flex-grow pb-0 max-lg:hidden"
               hide-filter
               search-column-class="flex-grow" />
           </div>
@@ -92,7 +92,7 @@
 
           <MobileExpandableSection
             v-slot="{ onCloseMobileSubMenu }"
-            class="lg:!hidden"
+            class="lg:hidden"
             :title="$t('explore')">
             <NavbarExploreOptions
               @select="
@@ -103,7 +103,7 @@
               " />
           </MobileExpandableSection>
           <NavbarExploreDropdown
-            class="navbar-explore custom-navbar-item max-lg:!hidden"
+            class="navbar-explore custom-navbar-item max-lg:hidden"
             data-testid="explore" />
 
           <a
@@ -130,7 +130,7 @@
 
           <MobileExpandableSection
             v-slot="{ onCloseMobileSubMenu }"
-            class="lg:!hidden"
+            class="lg:hidden"
             no-padding
             :title="$t('chainSelect', [chainName])">
             <NavbarChainOptions
@@ -157,7 +157,7 @@
             :show-label="isTouch"
             @closeBurgerMenu="showMobileNavbar" />
 
-          <div class="lg:!hidden">
+          <div class="lg:hidden">
             <template v-if="!account">
               <MobileExpandableSection
                 v-slot="{ onCloseMobileSubMenu }"
@@ -183,7 +183,7 @@
                 {{ $t('profile.page') }}
                 <NeoIcon
                   icon="user-circle"
-                  class="w-4 h-4 ml-2 lg:!ml-0"
+                  class="w-4 h-4 ml-2 lg:ml-0"
                   size="medium" />
               </span>
               <NeoIcon class="icon--right" icon="chevron-right" />
@@ -200,7 +200,7 @@
 
           <NavbarProfileDropdown
             id="NavProfile"
-            class="max-lg:!hidden"
+            class="max-lg:hidden"
             :chain="urlPrefix"
             data-testid="navbar-profile-dropdown"
             @closeBurgerMenu="closeBurgerMenu" />
