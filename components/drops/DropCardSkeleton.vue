@@ -1,5 +1,5 @@
 <template>
-  <!-- <div class="border border-card-border-color bg-background-color h-min">
+  <div class="border border-card-border-color bg-background-color h-min">
     <div class="aspect-video">
       <NeoSkeleton no-margin :rounded="false" height="100%" class="h-full" />
     </div>
@@ -22,7 +22,7 @@
         </div>
       </div>
     </div>
-  </div> -->
+  </div>
 </template>
 
 <script setup lang="ts">

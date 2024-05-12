@@ -69,12 +69,12 @@
 
           <div class="!mt-6 flex gap-16">
             <div>
-              <span class="text-k-grey !mr-3">{{ $t('price') }}:</span>
+              <span class="text-k-grey mr-3">{{ $t('price') }}:</span>
               <span>{{ price }}</span>
             </div>
 
             <div>
-              <span class="text-k-grey !mr-3">{{ $t('supply') }}:</span>
+              <span class="text-k-grey mr-3">{{ $t('supply') }}:</span>
               <span>{{
                 withPlaceholder(
                   dropCalendar.supply,
