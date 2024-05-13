@@ -28,7 +28,7 @@
         <div class="text-sm !mb-6">
           {{ $i18n.t('walletConnect.startConnect') }}
         </div>
-        <div class="border py-4 !px-6 !mb-6 bg-k-grey-light border-k-grey">
+        <div class="border py-4 px-6 !mb-6 bg-k-grey-light border-k-grey">
           <div class="mb-3">{{ $i18n.t('walletConnect.quickSteps') }}</div>
           <ol class="text-sm font-bold pl-4">
             <li class="mb-3">
@@ -72,7 +72,7 @@
       </div>
 
       <div v-if="showUninstalledWallet" class="px-6">
-        <hr class="!my-0" />
+        <hr class="my-0" />
         <NeoButton
           class="!w-full !my-6"
           variant="outlined-rounded"
