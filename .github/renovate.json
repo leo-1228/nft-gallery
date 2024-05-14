@@ -1,0 +1,41 @@
+{
+  "timezone": "Europe/Berlin",
+  "commitMessagePrefix": "[skip netlify]",
+  "automerge": true,
+  "automergeType": "pr-comment",
+  "automergeComment": "lgtm",
+  "extends": ["config:base", ":dependencyDashboard"],
+  "prHourlyLimit": 5,
+  "enabledManagers": ["npm"],
+  "rangeStrategy": "bump",
+  "updatePinnedDependencies": false,
+  "schedule": ["before 3am on Monday"],
+  "packageRules": [
+    {
+      "matchSourceUrlPrefixes": [
+        "https://github.com/polkadot-js/",
+        "https://github.com/vue-polkadot/",
+        "https://github.com/kodadot/packages",
+        "https://github.com/cloudacy/vue-markdown-render",
+        "https://github.com/FortAwesome/Font-Awesome",
+        "https://github.com/TypeStrong/ts-loader"
+      ],
+      "groupName": "merge with hazmat suit extra",
+      "enabled": false
+    },
+    {
+      "groupName": "Bumped minor version of packages",
+      "prHeader": "Bumped minor version of packages, check if builds are still passing, please 🥺",
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchDepTypes": ["dependencies", "devDependencies"]
+    },
+    {
+      "matchUpdateTypes": ["major", "pin"],
+      "enabled": false
+    },
+    {
+      "packageNames": ["node"],
+      "enabled": false
+    }
+  ]
+}

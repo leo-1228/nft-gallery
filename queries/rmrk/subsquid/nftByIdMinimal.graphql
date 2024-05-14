@@ -1,0 +1,8 @@
+query nftByIdMinimal($id: String!) {
+  nft: nftEntityById(id: $id) {
+    id
+    currentOwner
+    price
+    burned
+  }
+}

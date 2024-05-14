@@ -1,0 +1,25 @@
+name: Reviewdog
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  eslint:
+    name: runner / eslint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install dependencies
+        uses: ./.github/actions/pnpm-install
+
+      - name: Run eslint with reviewdog
+        uses: reviewdog/action-eslint@v1.22.0
+        with:
+          level: error
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          reporter: github-pr-review
+          eslint_flags: '--quiet --ignore-path .gitignore --ext .js,.ts,.vue .'
+          fail_on_error: true
+          filter_mode: nofilter
